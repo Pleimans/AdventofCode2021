@@ -3,7 +3,7 @@ function increases(inputs::Vector{Int})::Int
 end
 
 function sumincreases(inputs::Vector{Int})::Int
-    l = [sum(inputs[i:i+2]) for i in eachindex(inputs[1:end-2])]
+    l = map((x, y, z) -> x + y + z, inputs[1:end-2], inputs[2:end-1], inputs[3:end])
     increases(l)
 end
 
